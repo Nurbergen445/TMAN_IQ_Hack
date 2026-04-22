@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AegisSentinel</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 300px;
+      background: #0f172a;
+      color: #e2e8f0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 13px;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .logo { font-size: 20px; }
+
+    .brand {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #93c5fd;
+    }
+
+    .subtitle {
+      font-size: 10px;
+      color: #64748b;
+      margin-top: 1px;
+    }
+
+    /* ── Score section ── */
+    .score-section {
+      padding: 16px;
+      text-align: center;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .score-circle {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 3px solid var(--score-color, #475569);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 8px;
+      position: relative;
+    }
+
+    .score-number {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--score-color, #94a3b8);
+    }
+
+    .score-pct {
+      font-size: 11px;
+      color: #64748b;
+    }
+
+    .risk-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      background: var(--badge-bg, #1e293b);
+      color: var(--score-color, #94a3b8);
+      border: 1px solid var(--score-color, #475569);
+      margin-bottom: 4px;
+    }
+
+    /* ── Metadata row ── */
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 16px;
+      border-bottom: 1px solid #1e293b;
+      background: #0a0f1e;
+    }
+
+    .meta-item {
+      text-align: center;
+    }
+
+    .meta-label {
+      font-size: 9px;
+      color: #475569;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .meta-value {
+      font-size: 11px;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-top: 2px;
+    }
+
+    .meta-value.selling-yes { color: #f87171; }
+    .meta-value.selling-no  { color: #34d399; }
+
+    /* ── Risks section ── */
+    .section-title {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #475569;
+      text-transform: uppercase;
+      padding: 8px 16px 4px;
+    }
+
+    .risk-list {
+      padding: 0 16px 8px;
+      max-height: 140px;
+      overflow-y: auto;
+    }
+
+    .risk-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      padding: 4px 0;
+      border-bottom: 1px solid #1e293b;
+      font-size: 11px;
+      color: #cbd5e1;
+    }
+
+    .risk-item:last-child { border-bottom: none; }
+
+    .risk-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ef4444;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    /* ── Verdict ── */
+    .verdict {
+      padding: 8px 16px;
+      font-size: 11px;
+      color: #94a3b8;
+      line-height: 1.5;
+      border-top: 1px solid #1e293b;
+      font-style: italic;
+    }
+
+    /* ── Empty / scanning states ── */
+    .empty-state {
+      padding: 24px 16px;
+      text-align: center;
+      color: #475569;
+    }
+
+    .empty-icon { font-size: 32px; margin-bottom: 8px; }
+    .empty-text { font-size: 11px; line-height: 1.5; }
+
+    /* ── Footer ── */
+    .footer {
+      padding: 8px 16px;
+      border-top: 1px solid #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-link {
+      font-size: 10px;
+      color: #475569;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .footer-link:hover { color: #93c5fd; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <span class="logo">🛡</span>
+  <div>
+    <div class="brand">AEGISSENTINEL</div>
+    <div class="subtitle">Privacy Policy Analyser</div>
+  </div>
+</div>
+
+<div id="content">
+  <!-- Injected by popup.js -->
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>
